@@ -24,9 +24,9 @@ function NewChat() {
   return (
     <div
       onClick={createNewChat}
-      className="flex justify-start gap-2 text-white border border-gray-700 chatRow"
+      className="flex justify-start text-white border border-gray-700 chatRow"
     >
-      <PlusIcon className="h-4 w-4" />
+      <PlusIcon className="h-5 w-5" />
       <p>New Chat</p>
     </div>
   );

@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { SessionProvider } from "../components/SessionProvider";
 import SideBar from "../components/SideBar";
 import Login from "../components/Login";
-import { authOptions } from "../pages/api/auth/[...nextAuth]";
+import { authOptions } from "../pages/api/auth/[...nextauth]";
 
 export default async function RootLayout({
   children,
@@ -21,7 +21,7 @@ export default async function RootLayout({
             <Login />
           ) : (
             <div className="flex">
-              <div className="bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
+              <div className="bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[16rem]">
                 <SideBar />
               </div>
               {/* ChatProvider - Notification */}
