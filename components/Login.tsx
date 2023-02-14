@@ -27,7 +27,7 @@ const Login = () => {
           onClick={() => signIn("google")}
           className="bg-[#10a37f] py-2 px-3 rounded hover:bg-[#0f8e6c]"
         >
-          Sign in
+          Log in
         </button>
         <button className="bg-[#10a37f] py-2 px-3 rounded hover:bg-[#0f8e6c]">
           Sign up
