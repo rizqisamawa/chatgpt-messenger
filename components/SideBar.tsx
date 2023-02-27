@@ -4,7 +4,7 @@ import NewChat from "./NewChat";
 import { useSession, signOut } from "next-auth/react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
-import { collection } from "firebase/firestore";
+import { collection, orderBy, query } from "firebase/firestore";
 import ChatRow from "./ChatRow";
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
 
@@ -12,7 +12,11 @@ function SideBar() {
   const { data: session } = useSession();
 
   const [chats, loading, erro] = useCollection(
-    session && collection(db, "users", session.user?.email!, "chats")
+    session &&
+      query(
+        collection(db, "users", session.user?.email!, "chats"),
+        orderBy("createdAt", "asc")
+      )
   );
 
   const logOut = () => {
